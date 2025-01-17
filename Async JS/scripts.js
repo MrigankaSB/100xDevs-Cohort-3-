@@ -52,3 +52,36 @@ console.log(doOperation(1, 2, sum));
 console.log(doOperation(1, 2, multiply));
 console.log(doOperation(1, 2, subtract));
 console.log(doOperation(1, 2, divide));
+
+// Example 5.a: I/O With Asynchronous Nature:
+// const fs = require("fs");   [Already been declared]
+function read(err, data) {
+  console.log(data);
+}
+
+fs.readFile("a.txt", "utf-8", read);
+fs.readFile("b.txt", "utf-8", read);
+
+console.log("Hello!");
+
+// Example 5.b: I/O With Asynchronous Nature:
+// const fs = require("fs");   [Already been declared]
+fs.readFile("a.txt", "utf-8", function (err, contents) {
+  console.log(contents);
+});
+
+fs.readFile("b.txt", "utf-8", function (err, contents) {
+  console.log(contents);
+});
+
+fs.readFile("a.txt", "utf-8", function (err, contents) {
+  console.log(contents);
+});
+
+// Example 6: SetTimeout:
+function run() {
+  console.log("I will run after 1s");
+}
+
+setTimeout(run, 1000);
+console.log("I will run immedietely");
